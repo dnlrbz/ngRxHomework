@@ -1,0 +1,13 @@
+<div class="element-right">
+  <ng-container *ngIf="currentResort">
+    <app-weather [object]="currentResort?.weather"></app-weather>
+    <app-social-info [object]="currentResort?.social_info"></app-social-info>
+  </ng-container>
+</div>
+<div class="clear"> </div>
+
+
+
+
+
+

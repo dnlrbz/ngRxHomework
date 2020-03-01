@@ -1,0 +1,13 @@
+<h1>Hot Weather Widget</h1>
+<ng-container *ngIf="this.resortList | async as resorts; else loading">
+  <div class="element">
+    <app-resorts-list [resortList]="resorts" (currResortChange)="changeResort($event)"></app-resorts-list>
+    <app-resort-info-detail [currentResort]="resorts[0]"></app-resort-info-detail>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+    <mat-spinner class="center" color="accent"></mat-spinner>
+</ng-template>
+<app-footer></app-footer>
+
