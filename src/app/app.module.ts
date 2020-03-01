@@ -20,7 +20,7 @@ import {reducer} from './store/reducers/resorts.reducer';
 import {ResortEffects} from './store/effects/resort.effects';
 import {EffectsModule} from '@ngrx/effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSpinner} from '@angular/material';
+import {MatProgressSpinnerModule, MatSpinner} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,7 @@ import {MatSpinner} from '@angular/material';
     TelephonePipe,
     TemperatureComponent,
     ImgUrlPipe,
-    ResortListComponent,
-    MatSpinner
+    ResortListComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +45,8 @@ import {MatSpinner} from '@angular/material';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     ResortEffects
